@@ -262,27 +262,35 @@ class Population(object):
         return '\n'.join(_str)
 
 
-
-
-
-
-def test_individual(params):
-    ind = Individual(params, 0)
+def test_individual(params=None,indi_no = 2):
+    if params is None:
+        from utils import StatusUpdateTool
+        params = StatusUpdateTool.get_init_params()
+    ind = Individual(params, indi_no)
     ind.initialize()
     print(ind)
     print(ind.uuid())
 
-def test_population(params):
-    pop = Population(params, 0)
+def test_population(params=None,gen_no=0):
+    if params is None:
+        from utils import StatusUpdateTool
+        params = StatusUpdateTool.get_init_params()
+        gen_no = 20
+    pop = Population(params, gen_no)
     pop.initialize()
     print(pop)
 
 
 
 if __name__ == '__main__':
+    from utils import StatusUpdateTool
 
-    test_individual()
-    #test_population()
+    params = StatusUpdateTool.get_init_params()
+    gen_no = 20
+    #pop = Population(params, gen_no)
+    test_individual(params)
+    print("=====================================================")
+    test_population(params,gen_no)
 
 
 
