@@ -553,7 +553,6 @@ if __name__ == '__main__':
     FORMAT = '%(asctime)-15s [%(levelname)s] %(message)s'
     logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 
-
     _params = StatusUpdateTool.get_init_params()
     _gen_no = 20
     pop = Population(_params, _gen_no)
