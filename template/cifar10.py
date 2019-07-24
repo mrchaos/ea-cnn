@@ -1,4 +1,4 @@
-"""
+#"""
 from __future__ import print_function
 import torch
 from torch.autograd import Variable
@@ -217,4 +217,4 @@ class RunModel(object):
             f.write('%s=%.5f\n'%(file_id, best_acc))
             f.flush()
             f.close()
-"""
+#"""

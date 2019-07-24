@@ -287,7 +287,6 @@ if __name__ == '__main__':
 
     params = StatusUpdateTool.get_init_params()
     gen_no = 20
-    #pop = Population(params, gen_no)
     test_individual(params)
     print("=====================================================")
     test_population(params,gen_no)
