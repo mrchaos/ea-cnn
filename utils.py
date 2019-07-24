@@ -31,7 +31,8 @@ class StatusUpdateTool(object):
     @classmethod
     def __read_ini_file(cls, section, key):
         config = configparser.ConfigParser()
-        config.read('global.ini')
+        if len(config.read('global.ini'))== 0 :
+            raise FileExistsError("cannot find global.ini")
         return config.get(section, key)
 
     @classmethod
