@@ -546,5 +546,19 @@ class Mutation(object):
 
 
 if __name__ == '__main__':
-    m = Mutation(None, None, None)
+
+    from genetic.population import  Population
+    import logging
+
+    FORMAT = '%(asctime)-15s [%(levelname)s] %(message)s'
+    logging.basicConfig(format=FORMAT, level=logging.DEBUG)
+
+
+    _params = StatusUpdateTool.get_init_params()
+    _gen_no = 20
+    pop = Population(_params, _gen_no)
+    pop.initialize()
+    _prob = 0.2 # Mutation Probability
+
+    m = Mutation(pop.individuals, _prob, logging)
     m.do_mutation()
